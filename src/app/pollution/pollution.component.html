@@ -1,0 +1,32 @@
+    <table>
+<thead>
+    <tr>
+ <th>id</th>
+<th>city</th>
+<th>country</th>
+<th>2018</th>
+<th>2019</th>
+<th>2020</th>
+<th>2021</th>
+<th>2022</th>
+<th>2023</th>
+</tr></thead>
+<tbody>
+    <tr *ngFor="let data of getPaginatedData()">
+    <td>{{data.id}}</td>
+    <td>{{data.city}}</td>
+    <td>{{data.country}}</td>
+    <td>{{data.year2018}}</td>
+    <td>{{data.year2019}}</td>
+    <td>{{data.year2020}}</td>
+    <td>{{data.year2021}}</td>
+    <td>{{data.year2022}}</td>
+    <td>{{data.year2023}}</td>
+</tr>
+</tbody> 
+</table>
+    <div>
+        <button [disabled]="currentPage===1"(click)="onPageChange(currentPage-1)">Previous</button>
+        <span>Page{{currentPage}} of {{ totalPages }}</span>
+        <button [disabled]="currentPage===totalPages|| totalPages==0"(click)="onPageChange(currentPage+1)">Next</button> 
+       </div>
